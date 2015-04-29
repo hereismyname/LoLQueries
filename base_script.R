@@ -25,4 +25,6 @@ keyfile <- readLines("keyfile.txt", n = 1)
 mylist <- c("highronic", "suntso")
 path <- "./json-files/"
 
+if(file.exists("json-files") == FALSE) { dir.create("json-files") }
+
 script(mylist, path)
