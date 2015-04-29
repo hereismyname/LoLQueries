@@ -16,7 +16,7 @@ getplayerid <- function(username, key) {
 getmatchhist <- function(id, key, queuetype = "none", mingame, maxgame) {
     
     matchhistquery <- "https://na.api.pvp.net/api/lol/na/v2.2/matchhistory/"
-    apikey <- paste("?api_key=", key, sep = "")
+    apikey <- paste("api_key=", key, sep = "")
     
     # indexes <- paste("&beginIndex=", mingame, "&endIndex=", maxgame, sep = "")
     rankorno <- ""
@@ -35,7 +35,7 @@ getmatchhist <- function(id, key, queuetype = "none", mingame, maxgame) {
     finalquery <- paste(matchhistquery, id, rankorno, apikey, sep = "")
     
     yepyep <- GET(finalquery)
-    yepyep <- toJSON(content(yepyep))
+    toJSON(content(yepyep))
 }
 
 buildplayerstats <- function(playerhist) {
