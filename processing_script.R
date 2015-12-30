@@ -1,5 +1,8 @@
 ## json_data <- fromJSON(paste(readLines(json_file), collapse=""))
-## need to implement a loop or something to read in json files previously stored
+
+## This function seems contrived and may not scale well-- should probably be broken
+## into several different functions, and perhaps one that deals solely with 
+## parsing/formatting the JSON files.
 
 buildplayerstats <- function(playerhist) {
     playerhist <- fromJSON(playerhist)
